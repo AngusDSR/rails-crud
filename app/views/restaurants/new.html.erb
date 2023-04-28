@@ -1,11 +1,7 @@
 <h1>Add a new restaurant</h1>
 
-<%= form_for(@restaurant) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.label :rating %>
-  <%= f.number_field :rating %>
-  <%= f.submit "➕ Add" %>
-<% end %>
+<div>
+  <%= render 'form', {restaurant: @restaurant, submit_action: "➕ Add"} %>
+</div>
+
+<%= link_to "❌ Cancel", restaurants_path %>

@@ -2,3 +2,10 @@
 <p>(<%= "⭐" * @restaurant.rating %>)</p>
 
 <p><%= @restaurant.address %></p>
+
+<p><%= link_to "↩️ Back to all restaurants", restaurants_path %></p>
+<%= link_to "📝 Edit", restaurant_edit_path %>
+<%= link_to "🗑️ Delete",
+  restaurant_path(@restaurant),
+  data: {turbo_method: :delete, turbo_confirm: "Delete this restaurant?"}
+%>
